@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  capture:
+    build:
+      context: .
+    volumes:
+      - ./tmp/capture_data:/tmp/capture_data
+    networks:
+      dhcp:
+        ipv4_address: 172.1.0.21
+
+networks:
+  dhcp:
+    name: "staff-device-dhcp-server_default"
+
